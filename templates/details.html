@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FWI Prediction - Input Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 25px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 12px;
+    }
+    small {
+      display: block;
+      margin-bottom: 6px;
+      color: #555;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #4CAF50;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>FWI Prediction Form</h1>
+    <form action="/predict" method="POST">
+
+      <label for="Temperature">🌡️ Temperature (°C)</label>
+      <small>Average daily temperature in Celsius.</small>
+      <input type="number" name="Temperature" required>
+
+      <label for="RH">💧 Relative Humidity (%)</label>
+      <small>Moisture content of air (0–100%).</small>
+      <input type="number" name="RH" required>
+
+      <label for="Ws">💨 Wind Speed (km/h)</label>
+      <small>Average wind speed during the day.</small>
+      <input type="number" name="Ws" required>
+
+      <label for="Rain">🌧️ Rain (mm)</label>
+      <small>Total rainfall in mm.</small>
+      <input type="number" step="0.1" name="Rain" required>
+
+      <label for="FFMC">🔥 Fine Fuel Moisture Code (FFMC)</label>
+      <small>Represents surface litter moisture and fire ignition potential (0–101).</small>
+      <input type="number" step="0.1" name="FFMC" required>
+
+      <label for="DMC">🌲 Duff Moisture Code (DMC)</label>
+      <small>Represents medium-term moisture content of organic material (0–300+).</small>
+      <input type="number" step="0.1" name="DMC" required>
+
+      <label for="ISI">⚡ Initial Spread Index (ISI)</label>
+      <small>Represents fire spread rate potential.</small>
+      <input type="number" step="0.1" name="ISI" required>
+
+      <label for="Classes">🔥 Fire Status</label>
+      <small>Indicates whether fire occurred.</small>
+      <select name="Classes" required>
+        <option value="0">No Fire</option>
+        <option value="1">Fire</option>
+      </select>
+
+      <label for="Region">📍 Region</label>
+      <small>Select dataset region.</small>
+      <select name="Region" required>
+        <option value="0">Bejaia Region</option>
+        <option value="1">Sidi-Bel Abbes Region</option>
+      </select>
+
+      <button type="submit">Predict Fire Weather Index</button>
+    </form>
+  </div>
+</body>
+</html>

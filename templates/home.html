@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Algerian Forest Fire FWI Prediction</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background: linear-gradient(120deg, #ffecd2, #fcb69f);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      padding: 40px;
+      max-width: 600px;
+      text-align: center;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    h1 {
+      color: #2c3e50;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #e67e22;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background: #d35400;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔥 Welcome to FWI Prediction System</h1>
+    <p>
+      This web application is built using the <strong>Algerian Forest Fire Dataset</strong> 
+      and Machine Learning to predict the <strong>Fire Weather Index (FWI)</strong>. <br><br>
+      Use this tool to assess fire danger levels and help in forest fire prevention strategies.
+    </p>
+    <form action="/predict" method="get">
+        <button type="submit" class="btn">Get Started</button>
+    </form>
+  </div>
+</body>
+</html>
